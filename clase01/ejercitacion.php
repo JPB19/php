@@ -7,17 +7,32 @@
     <?php
     echo $numero = 5;
     echo "<hr>";
+    var_dump($numero);
+    echo "<hr>";
     echo $numerodecimal = 5.5;
+    echo "<hr>";
+    var_dump($numerodecimal);
     echo"<hr>";
     echo $nombre= 'Julian';
+    echo "<hr>";
+    var_dump($nombre);
     echo"<hr>";
     echo $apellido= "Boschi";
+    echo "<hr>";
+    var_dump($apellido);
     echo"<hr>";
     echo $numero= "hola que tal";
+    echo "<hr>";
+    var_dump($numero);
     echo"<hr>";
     echo $nombre= 5.2;
+    echo "<hr>";
+    var_dump($nombre);
     echo"<hr>";
     echo $numero = "5.6";
+    echo "<hr>";
+    var_dump ($numero);
+    echo "<hr>";
 
 
     $uno = "tres";
