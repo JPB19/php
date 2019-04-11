@@ -162,12 +162,12 @@ echo "<br>";
 
 echo ("$numeroentero" . " " . "$numerodecimal");
 
-$numeroentero = ($numeroentero + 5);
+$numeroentero = $numeroentero + 5;
 $numerodecimal = ($numerodecimal + 0.6);
 
 echo "<br><br>";
 
-echo ("$numeroentero" . " " . "$numerodecimal");
+echo ($numeroentero . " " . $numerodecimal);
 
 $resultado = (($numeroentero * 2 + $numerodecimal) / ($numeroentero / 2) );
 
