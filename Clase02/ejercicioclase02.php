@@ -74,12 +74,96 @@ if ($nombredeusuario === "admin" && $clavedeusuario === "1234") {
 echo "<br><hr>";
 
 $edad= 21;
-$casado= "no";
-$sexo= "dasd";
+$casado= false;
+$sexo= "masculino";
 
 
+if($edad >= 18 && !$casado){
+
+  echo "Bienvenido";
+}
+elseif ($sexo === "otro") {
+    echo "Bienvenido";
+}
+
+else {
+  echo "No sos Bienvenido";
+}
+
+echo "<br><hr>";
+
+$cantidadDeAlumnos = 100;
+
+if ($cantidadDeAlumnos) {
+  echo "true";
+}
+else {
+  echo "false";
+}
+
+echo "<br><hr>";
+
+if ($i = 0) {
+  echo "true";
+}
+else {
+  echo "false";
+}
+
+echo "<br><hr>";
+
+$numero = 32;
 
 
+$paroimpar = ($numero % 2 == 0) ? "el numero es par" : "el numero es impar";
+
+echo ($paroimpar);
+
+echo "<br><hr>";
+
+$nombre = "Jorge";
+
+switch ($nombre) {
+  case 'Pedro':
+    echo "Hola_Pedro";
+    break;
+  case 'Juan':
+    echo "Hola_Juan";
+    break;
+  case 'Leopoldo':
+    echo "Hola_Leopoldo";
+    break;
+  case 'Mariano':
+    echo "Hola_Mariano";
+    break;
+  case 'Florencia':
+  echo "Hola_Florencia";
+    break;
+
+  default:
+    echo "No hay a quien saludar";
+    break;
+}
+
+echo "<br><hr>";
+
+$colorRemera = "negro";
+
+switch ($colorRemera) {
+  case 'amarillo':
+
+  case 'rojo':
+
+  case 'verde':
+
+  echo "es un color primario";
+
+    break;
+
+  default:
+    echo "La remera es de un color desconocido";
+    break;
+}
 
 
 
