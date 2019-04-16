@@ -52,5 +52,9 @@ while ($tirada < 5) {
 
 }
 
+echo "<br><hr>";
+
+
+
 
  ?>
