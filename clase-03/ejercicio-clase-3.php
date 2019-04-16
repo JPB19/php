@@ -1,14 +1,13 @@
 <?php
-for ($i=1; $i < 101; $i++) {
 
-  echo $i;
+$numerorand = rand(0 , 100);
 
-  if (rand (0 , 100)) {
-    break;
-  }
+for ($i=1; $i < $numerorand; $i++) {
+
+  echo $i . "<br>";
+
 
 }
-
 
 
 
@@ -39,18 +38,25 @@ while ($contador <= 5) {
 
 }
 
-$moneda = rand(0, 1);
+echo "<br><hr>";
+
+$cara= 0;
 $tirada = 0;
 
-while ($tirada < 5) {
+while ($cara < 5) {
+
+  $moneda = rand(0, 1);
 
   if ($moneda == 1) {
     echo $moneda;
-
-  $tirada ++;
+    $cara++;
   }
 
+  $tirada ++;
+
 }
+  echo "<br><hr>";
+  echo "las tiradas fueron" . $tirada;
 
 
  ?>
