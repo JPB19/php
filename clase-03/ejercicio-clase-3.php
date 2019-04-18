@@ -168,6 +168,12 @@ do {
 
 echo "<br><hr>";
 
+$arrayLetras = range("a", "o");
+
+for ($i=0; $i < count($arrayLetras); $i++) {
+  echo 
+}
+
 
 
 
