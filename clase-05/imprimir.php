@@ -18,29 +18,36 @@ foreach ($_GET as $datosregisro => $valor) {
 }
 */
 
-var_dump($_POST);
+// var_dump($_POST);
+//
+// echo "<br><hr>";
+//
+// echo $_POST["nombre"];
+// echo "<br>";
+// echo $_POST["email"];
+// echo "<br>";
+// echo $_POST["sexo"];
+// echo "<br>";
+// echo "<pre>";
+// print_r($_POST["hobbies"]);
+// echo "</pre>";
+// echo "<br>";
+// echo $_POST["estado-civil"];
+// echo "<br>";
+// echo $_POST["pais"];
 
 echo "<br><hr>";
 
-echo $_POST["nombre"];
-echo "<br>";
-echo $_POST["email"];
-echo "<br>";
-echo $_POST["sexo"];
-echo "<br>";
-echo "<pre>";
-print_r($_POST["hobbies"]);
-echo "</pre>";
-echo "<br>";
-echo $_POST["estado-civil"];
-echo "<br>";
-echo $_POST["pais"];
-
-echo "<br><hr>";
-
-/*foreach ($_POST as $datosregisro => $value) {
-  echo "$datosregisro : $value <br>");
-}*/
+foreach ($_POST as $datosregisro => $value) {
+  // if ($datosregisro == "hobbies") {
+  if (is_array($value)) {
+    foreach ($value as $hobbie) {
+        echo "Hobbie: $hobbie <br>";
+    }
+  } else {
+    echo "$datosregisro : $value <br>";
+  }
+}
 
 /*var_dump(getallheaders());
 

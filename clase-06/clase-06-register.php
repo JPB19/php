@@ -42,6 +42,8 @@
 	 </style>
 </head>
 <body>
+  <?php $paises= ["Argentina" , "Venezuela", "Peru" , "Colombia" ,"Ecuador" , "EEUU" , "España" , "Francia", "Italia" , "Marruecos"];?>
+
    <form method='post'>
       <fieldset >
 			<legend>Registrate</legend>
@@ -67,6 +69,41 @@
 				<label for='password'>Contraseña*:</label>
 				<input type='password' name='password'>
 			</div>
+
+      <div class='form-control'>
+				<label for='pais de nacimiento'>Pais de Nacimiento:</label>
+				<select class="" name="pais de nacimiento" id= "pais de nacimiento">
+          <?php foreach ($paises as $pais): ?>
+
+            <option value="<?php echo $pais ?>"><?php echo $pais ?></option>
+
+          <?php endforeach; ?>
+
+
+
+        </select>
+
+        <?php var_dump($_POST);?>
+			</div>
+
+      <?php if (!isset($_GET["versionCorta"])): ?>
+
+      <div class='form-control'>
+				<label for='confirmpassword'>Confirmar Contraseña*:</label>
+				<input type='confirmpassword' name='confirmpassword'>
+			</div>
+
+      <div class='form-control'>
+				<label for='telefono'>telefono de contacto:</label>
+				<input type='telefono' name='telefono'>
+			</div>
+
+      <div class='form-control'>
+				<label for='domicilio'>direccion domicilio:</label>
+				<input type='domicilio' name='domicilio'>
+			</div>
+
+      <?php endif; ?>
 
 			<div class='form-control'>
 				<button type="submit">ENVIAR</button>
