@@ -44,7 +44,7 @@
 <body>
   <?php $paises= ["Argentina" , "Venezuela", "Peru" , "Colombia" ,"Ecuador" , "EEUU" , "España" , "Francia", "Italia" , "Marruecos"];?>
 
-   <form method='post'>
+   <form method='post' action="confirmation.php">
       <fieldset >
 			<legend>Registrate</legend>
 
@@ -70,21 +70,35 @@
 				<input type='password' name='password'>
 			</div>
 
-      <div class='form-control'>
-				<label for='pais de nacimiento'>Pais de Nacimiento:</label>
-				<select class="" name="pais de nacimiento" id= "pais de nacimiento">
+      <div class='form-control' action>
+				<label for='pais-de-nacimiento'>Pais de Nacimiento:</label>
+				<select class="" name="pais-de-nacimiento" id= "pais-de-nacimiento">
           <?php foreach ($paises as $pais): ?>
 
             <option value="<?php echo $pais ?>"><?php echo $pais ?></option>
 
           <?php endforeach; ?>
 
-
-
-        </select>
+      </select>
 
         <?php var_dump($_POST);?>
 			</div>
+
+      <div class='form-control'>
+        <label for='pasatiempos'>Pasatiempos:</label>
+        <br>
+        <input type="checkbox" name="pasatiempos[]" value="Deportes">Deporte
+        <br>
+        <input type="checkbox" name="pasatiempos[]" value="Plaza con amigos">Plaza con amigos
+        <br>
+        <input type="checkbox" name="pasatiempos[]" value="Bares">Bares
+        <br>
+        <input type="checkbox" name="pasatiempos[]" value="Codear">Programar
+        <br>
+        <input type="checkbox" name="pasatiempos[]" value="Cocinar">Cocinar
+      </div>
+
+
 
       <?php if (!isset($_GET["versionCorta"])): ?>
 
