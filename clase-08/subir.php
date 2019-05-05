@@ -1,22 +1,34 @@
 <?php
 
+  define('ALLOWED_IMAGE_FORMATS', ['jpg', 'jpeg', 'png', 'gif']);
 
-  if (isset($_FILES["imagen"])) {
+echo "<pre>";
+var_dump($_FILES);
+echo "<pre>";
+  function registerValidate(){
 
-  if ($_FILES["imagen"]["error"] !== 0) {
-    echo "hubo un error de carga <br>";
+
+  $errors= [];
+  $imagen= $_FILES["imagen"];
+
+
+
+  if ($imagen["error"] != UPLOAD_ERR_OK) {
+    $errors["imagen"] = "subi una imagen";
   }
-
   else {
-    $ext = pathinfo($_FILES["imagen"]["name"] , PATHINFO_EXTENSION);
+    $ext = pathinfo($imagen["name"], PATHINFO_EXTENSION);
 
-    if ($ext !="jpg" && $ext != "jpeg" && $ext != "png") {
-
-      echo "La imagen debe ser formato jpg , jpeg o png <br>";
-    }
-
-    
   }
+  if ($ext != "jpg" && $ext != "png" && $ext != "jpeg") {
+    $errors["imagen"] = "los formatos validos deben ser jpg , jpeg y png";
+  }
+
+
+
+  return $errors;
+
+
 }
 
 
@@ -30,14 +42,14 @@
    </head>
    <body>
 
-     <form action="subir.php" method="post" enctype="multipart/form-data">
-      <div class="">
-        <label for="imagen">Imagen</label>
-        <input type="file" name="imagen" value="">
-      </div>
+    <form method="post" enctype="multipart/form-data">
+      <label for="imagen">subi una imagen</label>
+      <br>
+      <input type="file" name="imagen" value="">
+      <br><br>
+      <button type="submit" name="submit">subir</button>
 
-       <button type="submit" name="subir">Subir imagen</button>
-     </form>
+    </form>
 
    </body>
  </html>
