@@ -8,6 +8,12 @@ echo "<pre>";
   function registerValidate(){
 
 
+  if (isset($_POST["submit"])) {
+
+      $errors= [];
+      $imagen= $_FILES["imagen"];
+  }
+
   $errors= [];
   $imagen= $_FILES["imagen"];
 
@@ -22,6 +28,8 @@ echo "<pre>";
   }
   if ($ext != "jpg" && $ext != "png" && $ext != "jpeg") {
     $errors["imagen"] = "los formatos validos deben ser jpg , jpeg y png";
+
+    echo $errors["imagen"];
   }
 
 
