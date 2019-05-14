@@ -4,40 +4,37 @@
 
 echo "<pre>";
 var_dump($_FILES);
-echo "<pre>";
+echo "</pre>";
   function registerValidate(){
-
-
-  if (isset($_POST["submit"])) {
-
-      $errors= [];
-      $imagen= $_FILES["imagen"];
-  }
 
   $errors= [];
   $imagen= $_FILES["imagen"];
 
 
-
   if ($imagen["error"] != UPLOAD_ERR_OK) {
-    $errors["imagen"] = "subi una imagen";
+    $errors["imagen"] = "No subiste nada";
   }
   else {
     $ext = pathinfo($imagen["name"], PATHINFO_EXTENSION);
 
-  }
   if ($ext != "jpg" && $ext != "png" && $ext != "jpeg") {
-    $errors["imagen"] = "los formatos validos deben ser jpg , jpeg y png";
-
-    echo $errors["imagen"];
+      $errors["imagen"] = "los formatos validos deben ser jpg , jpeg y png";
+    }
+  }
+    return $errors;
   }
 
 
 
-  return $errors;
 
 
+
+$errores = [];
+
+if ($_POST) {
+  $errores = registerValidate();
 }
+
 
 
  ?>
@@ -50,8 +47,16 @@ echo "<pre>";
    </head>
    <body>
 
+     <?php if ($errores): ?>
+       <ul>
+         <?php foreach ($errores as $error): ?>
+           <li> <?php echo $error ?> </li>
+         <?php endforeach; ?>
+       </ul>
+     <?php endif; ?>
+
     <form method="post" enctype="multipart/form-data">
-      <label for="imagen">subi una imagen</label>
+      <label for="imagen">subi una imagen:</label>
       <br>
       <input type="file" name="imagen" value="">
       <br><br>
